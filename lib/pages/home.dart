@@ -7,14 +7,19 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Map data = {};
+  String bgImage='day.png';
+  Color bgColor=Colors.blue;
   @override
   Widget build(BuildContext context) {
     data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
-    //print(data);
+print(data);
+//
+//    //set background image
+    if(data['isDayTime']!=null){
+       bgImage = data['isDayTime'] ? 'day.png' : 'night.png';
+       bgColor = data['isDayTime'] ? Colors.blue : Colors.indigo[700];
 
-    //set background image
-    String bgImage = data['isDayTime'] ? 'day.png' : 'night.png';
-    Color bgColor = data['isDayTime'] ? Colors.blue : Colors.indigo[700];
+    }
     return Scaffold(
       backgroundColor: bgColor,
       body: SafeArea(
@@ -60,7 +65,8 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      data['location'],
+
+                     data['location'],
                       style: TextStyle(
                         fontSize: 28.0,
                         letterSpacing: 2.0,
@@ -73,6 +79,7 @@ class _HomeState extends State<Home> {
                   height: 20.0,
                 ),
                 Text(
+
                   data['time'],
                   style: TextStyle(
                     fontSize: 66.0,

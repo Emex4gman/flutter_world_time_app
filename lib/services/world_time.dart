@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 class WorldTime {
   String location; // location name for the ui
-  String time; // time in that loaction
+  String time; // time in that location
   String flag; // url to a flag icon
   String url; // api location for the api
   bool isDayTime; // true or false
@@ -13,10 +13,9 @@ class WorldTime {
   Future<void> getTime() async {
     try {
       // Make the request
-      Response responce =
+      Response response =
           await get('http://worldtimeapi.org/api/timezone/$url');
-      Map data = jsonDecode(responce.body);
-      //print(data);
+      Map data = jsonDecode(response.body);
 
       //get properties form data
       String datetime = data['datetime'];
@@ -35,7 +34,9 @@ class WorldTime {
       //
     } catch (e) {
       print(e);
-      time = "Could not get time at the monment";
+      print("error");
+
+      time = "Could not get time at the moment";
     }
   }
 }
