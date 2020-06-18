@@ -1,7 +1,7 @@
 # world_time
 
 A new Flutter project.
-
+[![Codemagic build status](https://api.codemagic.io/apps/5eebaca1c0adbf6a7db9aebe/5eebaca1c0adbf6a7db9aebd/status_badge.svg)](https://codemagic.io/apps/5eebaca1c0adbf6a7db9aebe/5eebaca1c0adbf6a7db9aebd/latest_build)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
